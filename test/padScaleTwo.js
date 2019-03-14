@@ -19,6 +19,7 @@ const tests = [
 	{ name: 'linear negative domain', args: [scaleLinear().domain([-100, 100]).range([0, 100]), [0, 10]], expected: [-100, 120] },
 	{ name: 'linear bump max', args: [scaleLinear().domain([1979, 2016]).range([0, 100]), [0, 50]], expected: [1979, 2034.5] },
 	{ name: 'linear change both', args: [scaleLinear().domain([-5, 5]).range([0, 100]), [10, 10]], expected: [-6, 6] },
+	{ name: 'time change both as linear', args: [scaleLinear().domain([new Date(Date.UTC(2010, 0, 1)), new Date(Date.UTC(2010, 11, 31))]).range([0, 100]), [10, 10]], expected: [1259159040000, 1296898560000] },
 	{ name: 'time change both', args: [scaleTime().domain([new Date(Date.UTC(2010, 0, 1)), new Date(Date.UTC(2010, 11, 31))]).range([0, 100]), [10, 10]], expected: [new Date(1259159040000), new Date(1296898560000)] }
 ];
 
